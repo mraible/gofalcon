@@ -23,6 +23,9 @@ type ActivitiesActivity struct {
 	// Required api scope to use this activity.
 	APIScope string `json:"api_scope,omitempty"`
 
+	// Activity class to identify how it should be orchestrated. E.g. External, Break, CreateVariable and UpdateVariable
+	Class string `json:"class,omitempty"`
+
 	// A detailed description of what this action does
 	// Required: true
 	Description *string `json:"description"`

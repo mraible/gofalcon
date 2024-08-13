@@ -15,10 +15,10 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// DetectsapiPostEntitiesAlertsV1Response detectsapi post entities alerts v1 response
+// ModelsDeliverySettingsEntityResponse models delivery settings entity response
 //
-// swagger:model detectsapi.PostEntitiesAlertsV1Response
-type DetectsapiPostEntitiesAlertsV1Response struct {
+// swagger:model models.DeliverySettingsEntityResponse
+type ModelsDeliverySettingsEntityResponse struct {
 
 	// errors
 	Errors []*MsaAPIError `json:"errors"`
@@ -27,13 +27,13 @@ type DetectsapiPostEntitiesAlertsV1Response struct {
 	// Required: true
 	Meta *MsaMetaInfo `json:"meta"`
 
-	// Resources represent the slice of Alerts that were retrieved for the given Alert IDs
+	// resources
 	// Required: true
-	Resources []*DetectsAlert `json:"resources"`
+	Resources []*ModelsDeliverySettings `json:"resources"`
 }
 
-// Validate validates this detectsapi post entities alerts v1 response
-func (m *DetectsapiPostEntitiesAlertsV1Response) Validate(formats strfmt.Registry) error {
+// Validate validates this models delivery settings entity response
+func (m *ModelsDeliverySettingsEntityResponse) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateErrors(formats); err != nil {
@@ -54,7 +54,7 @@ func (m *DetectsapiPostEntitiesAlertsV1Response) Validate(formats strfmt.Registr
 	return nil
 }
 
-func (m *DetectsapiPostEntitiesAlertsV1Response) validateErrors(formats strfmt.Registry) error {
+func (m *ModelsDeliverySettingsEntityResponse) validateErrors(formats strfmt.Registry) error {
 	if swag.IsZero(m.Errors) { // not required
 		return nil
 	}
@@ -80,7 +80,7 @@ func (m *DetectsapiPostEntitiesAlertsV1Response) validateErrors(formats strfmt.R
 	return nil
 }
 
-func (m *DetectsapiPostEntitiesAlertsV1Response) validateMeta(formats strfmt.Registry) error {
+func (m *ModelsDeliverySettingsEntityResponse) validateMeta(formats strfmt.Registry) error {
 
 	if err := validate.Required("meta", "body", m.Meta); err != nil {
 		return err
@@ -100,7 +100,7 @@ func (m *DetectsapiPostEntitiesAlertsV1Response) validateMeta(formats strfmt.Reg
 	return nil
 }
 
-func (m *DetectsapiPostEntitiesAlertsV1Response) validateResources(formats strfmt.Registry) error {
+func (m *ModelsDeliverySettingsEntityResponse) validateResources(formats strfmt.Registry) error {
 
 	if err := validate.Required("resources", "body", m.Resources); err != nil {
 		return err
@@ -127,8 +127,8 @@ func (m *DetectsapiPostEntitiesAlertsV1Response) validateResources(formats strfm
 	return nil
 }
 
-// ContextValidate validate this detectsapi post entities alerts v1 response based on the context it is used
-func (m *DetectsapiPostEntitiesAlertsV1Response) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+// ContextValidate validate this models delivery settings entity response based on the context it is used
+func (m *ModelsDeliverySettingsEntityResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.contextValidateErrors(ctx, formats); err != nil {
@@ -149,7 +149,7 @@ func (m *DetectsapiPostEntitiesAlertsV1Response) ContextValidate(ctx context.Con
 	return nil
 }
 
-func (m *DetectsapiPostEntitiesAlertsV1Response) contextValidateErrors(ctx context.Context, formats strfmt.Registry) error {
+func (m *ModelsDeliverySettingsEntityResponse) contextValidateErrors(ctx context.Context, formats strfmt.Registry) error {
 
 	for i := 0; i < len(m.Errors); i++ {
 
@@ -174,7 +174,7 @@ func (m *DetectsapiPostEntitiesAlertsV1Response) contextValidateErrors(ctx conte
 	return nil
 }
 
-func (m *DetectsapiPostEntitiesAlertsV1Response) contextValidateMeta(ctx context.Context, formats strfmt.Registry) error {
+func (m *ModelsDeliverySettingsEntityResponse) contextValidateMeta(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Meta != nil {
 
@@ -191,7 +191,7 @@ func (m *DetectsapiPostEntitiesAlertsV1Response) contextValidateMeta(ctx context
 	return nil
 }
 
-func (m *DetectsapiPostEntitiesAlertsV1Response) contextValidateResources(ctx context.Context, formats strfmt.Registry) error {
+func (m *ModelsDeliverySettingsEntityResponse) contextValidateResources(ctx context.Context, formats strfmt.Registry) error {
 
 	for i := 0; i < len(m.Resources); i++ {
 
@@ -217,7 +217,7 @@ func (m *DetectsapiPostEntitiesAlertsV1Response) contextValidateResources(ctx co
 }
 
 // MarshalBinary interface implementation
-func (m *DetectsapiPostEntitiesAlertsV1Response) MarshalBinary() ([]byte, error) {
+func (m *ModelsDeliverySettingsEntityResponse) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -225,8 +225,8 @@ func (m *DetectsapiPostEntitiesAlertsV1Response) MarshalBinary() ([]byte, error)
 }
 
 // UnmarshalBinary interface implementation
-func (m *DetectsapiPostEntitiesAlertsV1Response) UnmarshalBinary(b []byte) error {
-	var res DetectsapiPostEntitiesAlertsV1Response
+func (m *ModelsDeliverySettingsEntityResponse) UnmarshalBinary(b []byte) error {
+	var res ModelsDeliverySettingsEntityResponse
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

@@ -15,10 +15,10 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// DetectsapiPostEntitiesAlertsV2Response detectsapi post entities alerts v2 response
+// DetectsapiPostEntitiesAlertsV1ResponseSwagger detectsapi post entities alerts v1 response swagger
 //
-// swagger:model detectsapi.PostEntitiesAlertsV2Response
-type DetectsapiPostEntitiesAlertsV2Response struct {
+// swagger:model detectsapi.PostEntitiesAlertsV1ResponseSwagger
+type DetectsapiPostEntitiesAlertsV1ResponseSwagger struct {
 
 	// errors
 	Errors []*MsaAPIError `json:"errors"`
@@ -29,11 +29,11 @@ type DetectsapiPostEntitiesAlertsV2Response struct {
 
 	// Resources represent the slice of Alerts that were retrieved for the given Alert IDs
 	// Required: true
-	Resources []*DetectsAlert `json:"resources"`
+	Resources []*DetectsExternalAlert `json:"resources"`
 }
 
-// Validate validates this detectsapi post entities alerts v2 response
-func (m *DetectsapiPostEntitiesAlertsV2Response) Validate(formats strfmt.Registry) error {
+// Validate validates this detectsapi post entities alerts v1 response swagger
+func (m *DetectsapiPostEntitiesAlertsV1ResponseSwagger) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateErrors(formats); err != nil {
@@ -54,7 +54,7 @@ func (m *DetectsapiPostEntitiesAlertsV2Response) Validate(formats strfmt.Registr
 	return nil
 }
 
-func (m *DetectsapiPostEntitiesAlertsV2Response) validateErrors(formats strfmt.Registry) error {
+func (m *DetectsapiPostEntitiesAlertsV1ResponseSwagger) validateErrors(formats strfmt.Registry) error {
 	if swag.IsZero(m.Errors) { // not required
 		return nil
 	}
@@ -80,7 +80,7 @@ func (m *DetectsapiPostEntitiesAlertsV2Response) validateErrors(formats strfmt.R
 	return nil
 }
 
-func (m *DetectsapiPostEntitiesAlertsV2Response) validateMeta(formats strfmt.Registry) error {
+func (m *DetectsapiPostEntitiesAlertsV1ResponseSwagger) validateMeta(formats strfmt.Registry) error {
 
 	if err := validate.Required("meta", "body", m.Meta); err != nil {
 		return err
@@ -100,7 +100,7 @@ func (m *DetectsapiPostEntitiesAlertsV2Response) validateMeta(formats strfmt.Reg
 	return nil
 }
 
-func (m *DetectsapiPostEntitiesAlertsV2Response) validateResources(formats strfmt.Registry) error {
+func (m *DetectsapiPostEntitiesAlertsV1ResponseSwagger) validateResources(formats strfmt.Registry) error {
 
 	if err := validate.Required("resources", "body", m.Resources); err != nil {
 		return err
@@ -127,8 +127,8 @@ func (m *DetectsapiPostEntitiesAlertsV2Response) validateResources(formats strfm
 	return nil
 }
 
-// ContextValidate validate this detectsapi post entities alerts v2 response based on the context it is used
-func (m *DetectsapiPostEntitiesAlertsV2Response) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+// ContextValidate validate this detectsapi post entities alerts v1 response swagger based on the context it is used
+func (m *DetectsapiPostEntitiesAlertsV1ResponseSwagger) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.contextValidateErrors(ctx, formats); err != nil {
@@ -149,7 +149,7 @@ func (m *DetectsapiPostEntitiesAlertsV2Response) ContextValidate(ctx context.Con
 	return nil
 }
 
-func (m *DetectsapiPostEntitiesAlertsV2Response) contextValidateErrors(ctx context.Context, formats strfmt.Registry) error {
+func (m *DetectsapiPostEntitiesAlertsV1ResponseSwagger) contextValidateErrors(ctx context.Context, formats strfmt.Registry) error {
 
 	for i := 0; i < len(m.Errors); i++ {
 
@@ -174,7 +174,7 @@ func (m *DetectsapiPostEntitiesAlertsV2Response) contextValidateErrors(ctx conte
 	return nil
 }
 
-func (m *DetectsapiPostEntitiesAlertsV2Response) contextValidateMeta(ctx context.Context, formats strfmt.Registry) error {
+func (m *DetectsapiPostEntitiesAlertsV1ResponseSwagger) contextValidateMeta(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Meta != nil {
 
@@ -191,7 +191,7 @@ func (m *DetectsapiPostEntitiesAlertsV2Response) contextValidateMeta(ctx context
 	return nil
 }
 
-func (m *DetectsapiPostEntitiesAlertsV2Response) contextValidateResources(ctx context.Context, formats strfmt.Registry) error {
+func (m *DetectsapiPostEntitiesAlertsV1ResponseSwagger) contextValidateResources(ctx context.Context, formats strfmt.Registry) error {
 
 	for i := 0; i < len(m.Resources); i++ {
 
@@ -217,7 +217,7 @@ func (m *DetectsapiPostEntitiesAlertsV2Response) contextValidateResources(ctx co
 }
 
 // MarshalBinary interface implementation
-func (m *DetectsapiPostEntitiesAlertsV2Response) MarshalBinary() ([]byte, error) {
+func (m *DetectsapiPostEntitiesAlertsV1ResponseSwagger) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -225,8 +225,8 @@ func (m *DetectsapiPostEntitiesAlertsV2Response) MarshalBinary() ([]byte, error)
 }
 
 // UnmarshalBinary interface implementation
-func (m *DetectsapiPostEntitiesAlertsV2Response) UnmarshalBinary(b []byte) error {
-	var res DetectsapiPostEntitiesAlertsV2Response
+func (m *DetectsapiPostEntitiesAlertsV1ResponseSwagger) UnmarshalBinary(b []byte) error {
+	var res DetectsapiPostEntitiesAlertsV1ResponseSwagger
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

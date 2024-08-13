@@ -84,7 +84,7 @@ type Oauth2RevokeTokenOK struct {
 	 */
 	XRateLimitRemaining int64
 
-	Payload *models.MsaReplyMetaOnly
+	Payload *models.MsaspecResponseFields
 }
 
 // IsSuccess returns true when this oauth2 revoke token o k response has a 2xx status code
@@ -125,7 +125,7 @@ func (o *Oauth2RevokeTokenOK) String() string {
 	return fmt.Sprintf("[POST /oauth2/revoke][%d] oauth2RevokeTokenOK  %+v", 200, o.Payload)
 }
 
-func (o *Oauth2RevokeTokenOK) GetPayload() *models.MsaReplyMetaOnly {
+func (o *Oauth2RevokeTokenOK) GetPayload() *models.MsaspecResponseFields {
 	return o.Payload
 }
 
@@ -160,7 +160,7 @@ func (o *Oauth2RevokeTokenOK) readResponse(response runtime.ClientResponse, cons
 		o.XRateLimitRemaining = valxRateLimitRemaining
 	}
 
-	o.Payload = new(models.MsaReplyMetaOnly)
+	o.Payload = new(models.MsaspecResponseFields)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -194,7 +194,7 @@ type Oauth2RevokeTokenBadRequest struct {
 	 */
 	XRateLimitRemaining int64
 
-	Payload *models.MsaReplyMetaOnly
+	Payload *models.MsaspecResponseFields
 }
 
 // IsSuccess returns true when this oauth2 revoke token bad request response has a 2xx status code
@@ -235,7 +235,7 @@ func (o *Oauth2RevokeTokenBadRequest) String() string {
 	return fmt.Sprintf("[POST /oauth2/revoke][%d] oauth2RevokeTokenBadRequest  %+v", 400, o.Payload)
 }
 
-func (o *Oauth2RevokeTokenBadRequest) GetPayload() *models.MsaReplyMetaOnly {
+func (o *Oauth2RevokeTokenBadRequest) GetPayload() *models.MsaspecResponseFields {
 	return o.Payload
 }
 
@@ -270,7 +270,7 @@ func (o *Oauth2RevokeTokenBadRequest) readResponse(response runtime.ClientRespon
 		o.XRateLimitRemaining = valxRateLimitRemaining
 	}
 
-	o.Payload = new(models.MsaReplyMetaOnly)
+	o.Payload = new(models.MsaspecResponseFields)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -304,7 +304,7 @@ type Oauth2RevokeTokenForbidden struct {
 	 */
 	XRateLimitRemaining int64
 
-	Payload *models.MsaReplyMetaOnly
+	Payload *models.MsaspecResponseFields
 }
 
 // IsSuccess returns true when this oauth2 revoke token forbidden response has a 2xx status code
@@ -345,7 +345,7 @@ func (o *Oauth2RevokeTokenForbidden) String() string {
 	return fmt.Sprintf("[POST /oauth2/revoke][%d] oauth2RevokeTokenForbidden  %+v", 403, o.Payload)
 }
 
-func (o *Oauth2RevokeTokenForbidden) GetPayload() *models.MsaReplyMetaOnly {
+func (o *Oauth2RevokeTokenForbidden) GetPayload() *models.MsaspecResponseFields {
 	return o.Payload
 }
 
@@ -380,7 +380,7 @@ func (o *Oauth2RevokeTokenForbidden) readResponse(response runtime.ClientRespons
 		o.XRateLimitRemaining = valxRateLimitRemaining
 	}
 
-	o.Payload = new(models.MsaReplyMetaOnly)
+	o.Payload = new(models.MsaspecResponseFields)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -539,7 +539,7 @@ type Oauth2RevokeTokenInternalServerError struct {
 	 */
 	XRateLimitRemaining int64
 
-	Payload *models.MsaReplyMetaOnly
+	Payload *models.MsaspecResponseFields
 }
 
 // IsSuccess returns true when this oauth2 revoke token internal server error response has a 2xx status code
@@ -580,7 +580,7 @@ func (o *Oauth2RevokeTokenInternalServerError) String() string {
 	return fmt.Sprintf("[POST /oauth2/revoke][%d] oauth2RevokeTokenInternalServerError  %+v", 500, o.Payload)
 }
 
-func (o *Oauth2RevokeTokenInternalServerError) GetPayload() *models.MsaReplyMetaOnly {
+func (o *Oauth2RevokeTokenInternalServerError) GetPayload() *models.MsaspecResponseFields {
 	return o.Payload
 }
 
@@ -615,7 +615,7 @@ func (o *Oauth2RevokeTokenInternalServerError) readResponse(response runtime.Cli
 		o.XRateLimitRemaining = valxRateLimitRemaining
 	}
 
-	o.Payload = new(models.MsaReplyMetaOnly)
+	o.Payload = new(models.MsaspecResponseFields)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

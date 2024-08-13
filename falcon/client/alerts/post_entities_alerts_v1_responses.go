@@ -84,7 +84,7 @@ type PostEntitiesAlertsV1OK struct {
 	 */
 	XRateLimitRemaining int64
 
-	Payload *models.DetectsapiPostEntitiesAlertsV1Response
+	Payload *models.DetectsapiPostEntitiesAlertsV1ResponseSwagger
 }
 
 // IsSuccess returns true when this post entities alerts v1 o k response has a 2xx status code
@@ -125,7 +125,7 @@ func (o *PostEntitiesAlertsV1OK) String() string {
 	return fmt.Sprintf("[POST /alerts/entities/alerts/v1][%d] postEntitiesAlertsV1OK  %+v", 200, o.Payload)
 }
 
-func (o *PostEntitiesAlertsV1OK) GetPayload() *models.DetectsapiPostEntitiesAlertsV1Response {
+func (o *PostEntitiesAlertsV1OK) GetPayload() *models.DetectsapiPostEntitiesAlertsV1ResponseSwagger {
 	return o.Payload
 }
 
@@ -160,7 +160,7 @@ func (o *PostEntitiesAlertsV1OK) readResponse(response runtime.ClientResponse, c
 		o.XRateLimitRemaining = valxRateLimitRemaining
 	}
 
-	o.Payload = new(models.DetectsapiPostEntitiesAlertsV1Response)
+	o.Payload = new(models.DetectsapiPostEntitiesAlertsV1ResponseSwagger)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -194,7 +194,7 @@ type PostEntitiesAlertsV1BadRequest struct {
 	 */
 	XRateLimitRemaining int64
 
-	Payload *models.DetectsapiPostEntitiesAlertsV1Response
+	Payload *models.DetectsapiPostEntitiesAlertsV1ResponseSwagger
 }
 
 // IsSuccess returns true when this post entities alerts v1 bad request response has a 2xx status code
@@ -235,7 +235,7 @@ func (o *PostEntitiesAlertsV1BadRequest) String() string {
 	return fmt.Sprintf("[POST /alerts/entities/alerts/v1][%d] postEntitiesAlertsV1BadRequest  %+v", 400, o.Payload)
 }
 
-func (o *PostEntitiesAlertsV1BadRequest) GetPayload() *models.DetectsapiPostEntitiesAlertsV1Response {
+func (o *PostEntitiesAlertsV1BadRequest) GetPayload() *models.DetectsapiPostEntitiesAlertsV1ResponseSwagger {
 	return o.Payload
 }
 
@@ -270,7 +270,7 @@ func (o *PostEntitiesAlertsV1BadRequest) readResponse(response runtime.ClientRes
 		o.XRateLimitRemaining = valxRateLimitRemaining
 	}
 
-	o.Payload = new(models.DetectsapiPostEntitiesAlertsV1Response)
+	o.Payload = new(models.DetectsapiPostEntitiesAlertsV1ResponseSwagger)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -539,7 +539,7 @@ type PostEntitiesAlertsV1InternalServerError struct {
 	 */
 	XRateLimitRemaining int64
 
-	Payload *models.DetectsapiPostEntitiesAlertsV1Response
+	Payload *models.DetectsapiPostEntitiesAlertsV1ResponseSwagger
 }
 
 // IsSuccess returns true when this post entities alerts v1 internal server error response has a 2xx status code
@@ -580,7 +580,7 @@ func (o *PostEntitiesAlertsV1InternalServerError) String() string {
 	return fmt.Sprintf("[POST /alerts/entities/alerts/v1][%d] postEntitiesAlertsV1InternalServerError  %+v", 500, o.Payload)
 }
 
-func (o *PostEntitiesAlertsV1InternalServerError) GetPayload() *models.DetectsapiPostEntitiesAlertsV1Response {
+func (o *PostEntitiesAlertsV1InternalServerError) GetPayload() *models.DetectsapiPostEntitiesAlertsV1ResponseSwagger {
 	return o.Payload
 }
 
@@ -615,7 +615,7 @@ func (o *PostEntitiesAlertsV1InternalServerError) readResponse(response runtime.
 		o.XRateLimitRemaining = valxRateLimitRemaining
 	}
 
-	o.Payload = new(models.DetectsapiPostEntitiesAlertsV1Response)
+	o.Payload = new(models.DetectsapiPostEntitiesAlertsV1ResponseSwagger)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

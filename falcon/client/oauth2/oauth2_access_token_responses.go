@@ -202,7 +202,7 @@ type Oauth2AccessTokenBadRequest struct {
 	 */
 	XRateLimitRemaining int64
 
-	Payload *models.MsaReplyMetaOnly
+	Payload *models.MsaspecResponseFields
 }
 
 // IsSuccess returns true when this oauth2 access token bad request response has a 2xx status code
@@ -243,7 +243,7 @@ func (o *Oauth2AccessTokenBadRequest) String() string {
 	return fmt.Sprintf("[POST /oauth2/token][%d] oauth2AccessTokenBadRequest  %+v", 400, o.Payload)
 }
 
-func (o *Oauth2AccessTokenBadRequest) GetPayload() *models.MsaReplyMetaOnly {
+func (o *Oauth2AccessTokenBadRequest) GetPayload() *models.MsaspecResponseFields {
 	return o.Payload
 }
 
@@ -278,7 +278,7 @@ func (o *Oauth2AccessTokenBadRequest) readResponse(response runtime.ClientRespon
 		o.XRateLimitRemaining = valxRateLimitRemaining
 	}
 
-	o.Payload = new(models.MsaReplyMetaOnly)
+	o.Payload = new(models.MsaspecResponseFields)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -312,7 +312,7 @@ type Oauth2AccessTokenForbidden struct {
 	 */
 	XRateLimitRemaining int64
 
-	Payload *models.MsaReplyMetaOnly
+	Payload *models.MsaspecResponseFields
 }
 
 // IsSuccess returns true when this oauth2 access token forbidden response has a 2xx status code
@@ -353,7 +353,7 @@ func (o *Oauth2AccessTokenForbidden) String() string {
 	return fmt.Sprintf("[POST /oauth2/token][%d] oauth2AccessTokenForbidden  %+v", 403, o.Payload)
 }
 
-func (o *Oauth2AccessTokenForbidden) GetPayload() *models.MsaReplyMetaOnly {
+func (o *Oauth2AccessTokenForbidden) GetPayload() *models.MsaspecResponseFields {
 	return o.Payload
 }
 
@@ -388,7 +388,7 @@ func (o *Oauth2AccessTokenForbidden) readResponse(response runtime.ClientRespons
 		o.XRateLimitRemaining = valxRateLimitRemaining
 	}
 
-	o.Payload = new(models.MsaReplyMetaOnly)
+	o.Payload = new(models.MsaspecResponseFields)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -547,7 +547,7 @@ type Oauth2AccessTokenInternalServerError struct {
 	 */
 	XRateLimitRemaining int64
 
-	Payload *models.MsaReplyMetaOnly
+	Payload *models.MsaspecResponseFields
 }
 
 // IsSuccess returns true when this oauth2 access token internal server error response has a 2xx status code
@@ -588,7 +588,7 @@ func (o *Oauth2AccessTokenInternalServerError) String() string {
 	return fmt.Sprintf("[POST /oauth2/token][%d] oauth2AccessTokenInternalServerError  %+v", 500, o.Payload)
 }
 
-func (o *Oauth2AccessTokenInternalServerError) GetPayload() *models.MsaReplyMetaOnly {
+func (o *Oauth2AccessTokenInternalServerError) GetPayload() *models.MsaspecResponseFields {
 	return o.Payload
 }
 
@@ -623,7 +623,7 @@ func (o *Oauth2AccessTokenInternalServerError) readResponse(response runtime.Cli
 		o.XRateLimitRemaining = valxRateLimitRemaining
 	}
 
-	o.Payload = new(models.MsaReplyMetaOnly)
+	o.Payload = new(models.MsaspecResponseFields)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

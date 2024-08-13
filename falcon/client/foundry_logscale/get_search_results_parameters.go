@@ -80,6 +80,12 @@ type GetSearchResultsParams struct {
 	*/
 	JobID string
 
+	/* JobStatusOnly.
+
+	   If set to true, result rows are dropped from the response and only the job status is returned
+	*/
+	JobStatusOnly *bool
+
 	/* Limit.
 
 	   Maximum number of records to return.
@@ -124,6 +130,8 @@ func (o *GetSearchResultsParams) SetDefaults() {
 	var (
 		inferJSONTypesDefault = bool(false)
 
+		jobStatusOnlyDefault = bool(false)
+
 		matchResponseSchemaDefault = bool(false)
 
 		metadataDefault = bool(false)
@@ -131,6 +139,7 @@ func (o *GetSearchResultsParams) SetDefaults() {
 
 	val := GetSearchResultsParams{
 		InferJSONTypes:      &inferJSONTypesDefault,
+		JobStatusOnly:       &jobStatusOnlyDefault,
 		MatchResponseSchema: &matchResponseSchemaDefault,
 		Metadata:            &metadataDefault,
 	}
@@ -205,6 +214,17 @@ func (o *GetSearchResultsParams) WithJobID(jobID string) *GetSearchResultsParams
 // SetJobID adds the jobId to the get search results params
 func (o *GetSearchResultsParams) SetJobID(jobID string) {
 	o.JobID = jobID
+}
+
+// WithJobStatusOnly adds the jobStatusOnly to the get search results params
+func (o *GetSearchResultsParams) WithJobStatusOnly(jobStatusOnly *bool) *GetSearchResultsParams {
+	o.SetJobStatusOnly(jobStatusOnly)
+	return o
+}
+
+// SetJobStatusOnly adds the jobStatusOnly to the get search results params
+func (o *GetSearchResultsParams) SetJobStatusOnly(jobStatusOnly *bool) {
+	o.JobStatusOnly = jobStatusOnly
 }
 
 // WithLimit adds the limit to the get search results params
@@ -300,6 +320,23 @@ func (o *GetSearchResultsParams) WriteToRequest(r runtime.ClientRequest, reg str
 
 		if err := r.SetQueryParam("job_id", qJobID); err != nil {
 			return err
+		}
+	}
+
+	if o.JobStatusOnly != nil {
+
+		// query param job_status_only
+		var qrJobStatusOnly bool
+
+		if o.JobStatusOnly != nil {
+			qrJobStatusOnly = *o.JobStatusOnly
+		}
+		qJobStatusOnly := swag.FormatBool(qrJobStatusOnly)
+		if qJobStatusOnly != "" {
+
+			if err := r.SetQueryParam("job_status_only", qJobStatusOnly); err != nil {
+				return err
+			}
 		}
 	}
 

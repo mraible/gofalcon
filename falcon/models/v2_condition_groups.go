@@ -14,21 +14,29 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// V2ConditionParameters v2 condition parameters
+// V2ConditionGroups v2 condition groups
 //
-// swagger:model v2.ConditionParameters
-type V2ConditionParameters struct {
+// swagger:model v2.ConditionGroups
+type V2ConditionGroups struct {
 
 	// fields
 	// Required: true
 	Fields map[string]ParameterConditionFieldParameter `json:"fields"`
+
+	// parameter order
+	// Required: true
+	ParameterOrder []string `json:"parameter_order"`
 }
 
-// Validate validates this v2 condition parameters
-func (m *V2ConditionParameters) Validate(formats strfmt.Registry) error {
+// Validate validates this v2 condition groups
+func (m *V2ConditionGroups) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateFields(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateParameterOrder(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -38,7 +46,7 @@ func (m *V2ConditionParameters) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *V2ConditionParameters) validateFields(formats strfmt.Registry) error {
+func (m *V2ConditionGroups) validateFields(formats strfmt.Registry) error {
 
 	if err := validate.Required("fields", "body", m.Fields); err != nil {
 		return err
@@ -65,8 +73,17 @@ func (m *V2ConditionParameters) validateFields(formats strfmt.Registry) error {
 	return nil
 }
 
-// ContextValidate validate this v2 condition parameters based on the context it is used
-func (m *V2ConditionParameters) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+func (m *V2ConditionGroups) validateParameterOrder(formats strfmt.Registry) error {
+
+	if err := validate.Required("parameter_order", "body", m.ParameterOrder); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this v2 condition groups based on the context it is used
+func (m *V2ConditionGroups) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.contextValidateFields(ctx, formats); err != nil {
@@ -79,7 +96,7 @@ func (m *V2ConditionParameters) ContextValidate(ctx context.Context, formats str
 	return nil
 }
 
-func (m *V2ConditionParameters) contextValidateFields(ctx context.Context, formats strfmt.Registry) error {
+func (m *V2ConditionGroups) contextValidateFields(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.Required("fields", "body", m.Fields); err != nil {
 		return err
@@ -99,7 +116,7 @@ func (m *V2ConditionParameters) contextValidateFields(ctx context.Context, forma
 }
 
 // MarshalBinary interface implementation
-func (m *V2ConditionParameters) MarshalBinary() ([]byte, error) {
+func (m *V2ConditionGroups) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -107,8 +124,8 @@ func (m *V2ConditionParameters) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *V2ConditionParameters) UnmarshalBinary(b []byte) error {
-	var res V2ConditionParameters
+func (m *V2ConditionGroups) UnmarshalBinary(b []byte) error {
+	var res V2ConditionGroups
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

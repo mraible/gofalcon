@@ -84,7 +84,7 @@ type GetV2OK struct {
 	 */
 	XRateLimitRemaining int64
 
-	Payload *models.DetectsapiPostEntitiesAlertsV2Response
+	Payload *models.DetectsapiPostEntitiesAlertsV2ResponseSwagger
 }
 
 // IsSuccess returns true when this get v2 o k response has a 2xx status code
@@ -125,7 +125,7 @@ func (o *GetV2OK) String() string {
 	return fmt.Sprintf("[POST /alerts/entities/alerts/v2][%d] getV2OK  %+v", 200, o.Payload)
 }
 
-func (o *GetV2OK) GetPayload() *models.DetectsapiPostEntitiesAlertsV2Response {
+func (o *GetV2OK) GetPayload() *models.DetectsapiPostEntitiesAlertsV2ResponseSwagger {
 	return o.Payload
 }
 
@@ -160,7 +160,7 @@ func (o *GetV2OK) readResponse(response runtime.ClientResponse, consumer runtime
 		o.XRateLimitRemaining = valxRateLimitRemaining
 	}
 
-	o.Payload = new(models.DetectsapiPostEntitiesAlertsV2Response)
+	o.Payload = new(models.DetectsapiPostEntitiesAlertsV2ResponseSwagger)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -194,7 +194,7 @@ type GetV2BadRequest struct {
 	 */
 	XRateLimitRemaining int64
 
-	Payload *models.DetectsapiPostEntitiesAlertsV2Response
+	Payload *models.DetectsapiPostEntitiesAlertsV2ResponseSwagger
 }
 
 // IsSuccess returns true when this get v2 bad request response has a 2xx status code
@@ -235,7 +235,7 @@ func (o *GetV2BadRequest) String() string {
 	return fmt.Sprintf("[POST /alerts/entities/alerts/v2][%d] getV2BadRequest  %+v", 400, o.Payload)
 }
 
-func (o *GetV2BadRequest) GetPayload() *models.DetectsapiPostEntitiesAlertsV2Response {
+func (o *GetV2BadRequest) GetPayload() *models.DetectsapiPostEntitiesAlertsV2ResponseSwagger {
 	return o.Payload
 }
 
@@ -270,7 +270,7 @@ func (o *GetV2BadRequest) readResponse(response runtime.ClientResponse, consumer
 		o.XRateLimitRemaining = valxRateLimitRemaining
 	}
 
-	o.Payload = new(models.DetectsapiPostEntitiesAlertsV2Response)
+	o.Payload = new(models.DetectsapiPostEntitiesAlertsV2ResponseSwagger)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -539,7 +539,7 @@ type GetV2InternalServerError struct {
 	 */
 	XRateLimitRemaining int64
 
-	Payload *models.DetectsapiPostEntitiesAlertsV2Response
+	Payload *models.DetectsapiPostEntitiesAlertsV2ResponseSwagger
 }
 
 // IsSuccess returns true when this get v2 internal server error response has a 2xx status code
@@ -580,7 +580,7 @@ func (o *GetV2InternalServerError) String() string {
 	return fmt.Sprintf("[POST /alerts/entities/alerts/v2][%d] getV2InternalServerError  %+v", 500, o.Payload)
 }
 
-func (o *GetV2InternalServerError) GetPayload() *models.DetectsapiPostEntitiesAlertsV2Response {
+func (o *GetV2InternalServerError) GetPayload() *models.DetectsapiPostEntitiesAlertsV2ResponseSwagger {
 	return o.Payload
 }
 
@@ -615,7 +615,7 @@ func (o *GetV2InternalServerError) readResponse(response runtime.ClientResponse,
 		o.XRateLimitRemaining = valxRateLimitRemaining
 	}
 
-	o.Payload = new(models.DetectsapiPostEntitiesAlertsV2Response)
+	o.Payload = new(models.DetectsapiPostEntitiesAlertsV2ResponseSwagger)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
